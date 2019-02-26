@@ -7,20 +7,53 @@
         <meta name="description" content="Mi primer pagina realizada desde cero">
         <meta name="keywords" content="html, css, js, cetis108, bachillerato">
         <title>Mi primera página web</title>
+        <!-- CSS Document -->
+        <style>
+            /* nav { background-color: blue; }
+            nav li { background-color: green; }
+            nav li a { background-color: red; } */
+            body { background-color: #e6e6e6; }
+            #menu {
+                padding: 0;
+                margin: 0;
+            }
+            #menu>li {
+                /* quitar viñeta */
+                list-style-type: none;
+                display: table-cell;
+            }
+            #menu>li>a {
+                color: #81888b;
+                text-decoration: none;
+                background-color: #fff;
+                padding: 15px 30px;
+                border-bottom: 3px solid #bdc9d1;
+                border-right: 1px solid #bdc9d1;
+                font-family: sans-serif;
+                font-size: 0.8em;
+            }
+            #menu>li>a:hover {
+                border-bottom: 3px solid #0f69b4;
+                color: #0f69b4;
+            }
+        </style>
     </head>
     <body>
         <header>
             <h1>Mi primera página web</h1>
-            <nav>
-                <!-- a[href=#]{Enlace $}*5 -->
-                <a href="#">Enlace 1</a>
-                <a href="#">Enlace 2</a>
-                <a href="#">Enlace 3</a>
-                <a href="#">Enlace 4</a>
-                <a href="#">Enlace 5</a>
+            <!-- nav>ul>li*5>a[href=#]{Enlace $} -->
+            <nav id="navbar">
+                <ul id="menu">
+                    <li><a href="#">Enlace 1</a></li>
+                    <li><a href="#">Enlace 2</a></li>
+                    <li><a href="#">Enlace 3</a></li>
+                    <li><a href="#">Enlace 4</a></li>
+                    <li><a href="#">Enlace 5</a></li>
+                </ul>
             </nav>
         </header>
-        <main>
+        <!-- CSS Inline -->
+        <main style="margin-top: 20px;">
             <img src="images/fondo-twitter-cetis108.png" alt="CETis108 techumbre">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat totam dolorem reiciendis, eum aperiam voluptatum in minima, obcaecati libero delectus quae? Quasi nobis est ullam quidem quos velit consequatur ducimus.</p>
         </main>
