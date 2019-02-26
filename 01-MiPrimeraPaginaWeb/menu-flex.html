@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Bidkar Aragon Cardenas">
+        <meta name="description" content="Mi primer pagina realizada desde cero">
+        <meta name="keywords" content="html, css, js, cetis108, bachillerato">
+        <title>Menu con Flex</title>
+        <!-- CSS Document -->
+        <style>
+            body { background-color: #e6e6e6; }
+            #menu {
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+            #menu>li {
+                /* quitar viñeta */
+                list-style-type: none;
+                /* display: table-cell; */
+                flex: auto;
+            }
+            #menu>li>a {
+                color: #81888b;
+                text-decoration: none;
+                background-color: #fff;
+                padding: 15px 30px;
+                border-bottom: 3px solid #bdc9d1;
+                border-right: 1px solid #bdc9d1;
+                font-family: sans-serif;
+                font-size: 0.8em;
+                display: block;
+                text-align: center;
+            }
+            #menu>li>a:hover {
+                border-bottom: 3px solid #0f69b4;
+                color: #0f69b4;
+            }
+            .contenedor {
+                width: 960px;
+                margin: 0 auto; /* centra elementos tipo bloque */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <h1>Mi primera página web</h1>
+                <nav id="navbar">
+                    <ul id="menu">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Plantel</a></li>
+                        <li><a href="#">Oferta educativa</a></li>
+                        <li><a href="#">Alumnos</a></li>
+                        <li><a href="#">Docentes</a></li>
+                        <li><a href="#">Transparencia</a></li>
+                        <li><a href="#">Empleados</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </body>
+</html>
