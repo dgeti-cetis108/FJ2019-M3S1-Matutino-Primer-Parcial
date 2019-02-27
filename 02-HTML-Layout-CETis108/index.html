@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid - Layout CETis108</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #pagina {
+            display: grid;
+            height: 100vh; /* vh=viewport height */
+            grid-template-rows: 150px 50px 1fr 100px;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: repeat(3, 320px);
+            justify-content: center;
+        }
+        #encabezado {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: aquamarine;
+        }
+        #contenido {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: lightblue;
+        }
+        #banners {
+            background-color: lightcoral;
+        }
+        #pie {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: lightgoldenrodyellow;
+        }
+        #navbar {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="pagina">
+        <header id="encabezado">
+            Encabezado
+        </header>
+        <nav id="navbar">
+            NavBar
+        </nav>
+        <main id="contenido">
+            Contenido
+        </main>
+        <aside id="banners">
+            Banners
+        </aside>
+        <footer id="pie">
+            Pie
+        </footer>
+    </div>
+</body>
+</html>
