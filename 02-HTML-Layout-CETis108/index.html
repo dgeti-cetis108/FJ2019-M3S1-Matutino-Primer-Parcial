@@ -8,7 +8,24 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+        /* Reset Heading */
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-weight: normal;
+        }
+
+        h1 { font-size: 1.5em; }
+        h2 { font-size: 1.2em; }
+        h3 { font-size: 1.1em; }
+        h4 { font-size: 1em; }
+        h5 { font-size: 0.9em; }
+        h6 { font-size: 0.8em; }
+
         #pagina {
             display: grid;
             height: 100vh;
@@ -34,23 +51,30 @@
             }
         }
         #encabezado {
-            /* grid-column-start: 1;
-            grid-column-end: 4; */
-            /* grid-column: 1 / 4; */
             grid-area: encabezado;
             background-color: aquamarine;
             display: grid;
-            grid-template-rows: repeat(2, 1fr);
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 100px 50px;
+            grid-template-columns: repeat(2, 100px) repeat(3, 1fr) repeat(2, 100px);
             grid-template-areas:
             "logo-sep logo-sep titulares titulares titulares logo-sems logo-uemstis"
             "logo-sep logo-sep titulares titulares titulares busqueda busqueda";
+            align-items: center; /* alineacion vertical de elementos */
         }
-        .logo-sep { grid-area: logo-sep; }
-        .titulares { grid-area: titulares; }
+        .logo-sep {
+            grid-area: logo-sep;
+        }
+        .titulares {
+            grid-area: titulares;
+            padding: 5px 10px;
+        }
         .logo-sems { grid-area: logo-sems; }
         .logo-uemstis { grid-area: logo-uemstis; }
         .form-busqueda { grid-area: busqueda; }
+
+        /* .logo-sep, .logo-sems, .logo-uemstis {
+            align-self: center;
+        } */
 
         #contenido {
             /* grid-column-start: 1;
@@ -78,12 +102,25 @@
             grid-area: navegacion;
             background-color: cyan;
         }
+
+        .form-busqueda {
+            position: relative;
+        }
+        .form-busqueda>input {
+            width: 95%;
+            box-sizing: border-box;
+        }
+        .form-busqueda>button {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
     </style>
 </head>
 <body>
     <div id="pagina">
         <header id="encabezado">
-            <img src="images/logo-sep.png" alt="Logo de la SEP" class="logo-sep">
+            <img src="images/logo-sep.png" alt="Logo de la SEP" class="logo-sep" width="200">
             <div class="titulares">
                 <h1>Sitio Oficial del CETis108</h1>
                 <h2>Subsecretaría de Educación Media Superior</h2>
@@ -91,11 +128,11 @@
                 <h4>Centro de Estudios Tecnológicos industrial y de servicios no. 108</h4>
                 <h5>CCT: 25DCT0108H Gral. Gabriel Leyva Solano</h5>
             </div>
-            <img src="images/logo-sems.png" alt="Logo de la SEMS" class="logo-sems">
-            <img src="images/logo-uemstis.png" alt="Logo de la UEMSTIS" class="logo-uemstis">
+            <img src="images/logo-sems.png" alt="Logo de la SEMS" class="logo-sems" width="100">
+            <img src="images/logo-uemstis.png" alt="Logo de la UEMSTIS" class="logo-uemstis" width="100">
             <div class="form-busqueda">
                 <input type="text" placeholder="Escribe algo">
-                <button>Buscar</button>
+                <button>B</button>
             </div>
         </header>
         <nav id="navbar">
