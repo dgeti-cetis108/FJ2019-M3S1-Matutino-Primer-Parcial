@@ -4,118 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Grid - Layout CETis108</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* Reset Heading */
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-weight: normal;
-        }
-
-        h1 { font-size: 1.5em; }
-        h2 { font-size: 1.2em; }
-        h3 { font-size: 1.1em; }
-        h4 { font-size: 1em; }
-        h5 { font-size: 0.9em; }
-        h6 { font-size: 0.8em; }
-
-        #pagina {
-            display: grid;
-            height: 100vh;
-            grid-template-rows: 150px 50px 1fr 100px;
-            grid-template-columns: repeat(2, 330px) 300px;
-            justify-content: center;
-            grid-template-areas: "encabezado encabezado encabezado"
-                                 "navegacion navegacion navegacion"
-                                 "contenido contenido banners"
-                                 "pie pie pie";
-        }
-        @media screen and (max-width: 768px) {
-            #pagina {
-                grid-template-rows: 200px repeat(2, 1fr) 100px;
-                grid-template-columns: 1fr;
-                grid-template-areas: "encabezado"
-                                     "contenido"
-                                     "banners"
-                                     "pie";
-            }
-            #navbar {
-                display: none;
-            }
-        }
-        #encabezado {
-            grid-area: encabezado;
-            background-color: aquamarine;
-            display: grid;
-            grid-template-rows: 100px 50px;
-            grid-template-columns: repeat(2, 100px) repeat(3, 1fr) repeat(2, 100px);
-            grid-template-areas:
-            "logo-sep logo-sep titulares titulares titulares logo-sems logo-uemstis"
-            "logo-sep logo-sep titulares titulares titulares busqueda busqueda";
-            align-items: center; /* alineacion vertical de elementos */
-        }
-        .logo-sep {
-            grid-area: logo-sep;
-        }
-        .titulares {
-            grid-area: titulares;
-            padding: 5px 10px;
-        }
-        .logo-sems { grid-area: logo-sems; }
-        .logo-uemstis { grid-area: logo-uemstis; }
-        .form-busqueda { grid-area: busqueda; }
-
-        /* .logo-sep, .logo-sems, .logo-uemstis {
-            align-self: center;
-        } */
-
-        #contenido {
-            /* grid-column-start: 1;
-            grid-column-end: 3; */
-            /* grid-column: 1 / 3; */
-            /* grid-column: 1 / span 2; */
-            grid-area: contenido;
-            background-color: lightblue;
-        }
-        #banners {
-            background-color: lightcoral;
-            grid-area: banners;
-        }
-        #pie {
-            /* grid-column-start: 1;
-            grid-column-end: 4; */
-            /* grid-column: 1 / -1; */
-            grid-area: pie;
-            background-color: lightgoldenrodyellow;
-        }
-        #navbar {
-            /* grid-column-start: 1;
-            grid-column-end: 4; */
-            /* grid-column: 1 / -1; */
-            grid-area: navegacion;
-            background-color: cyan;
-        }
-
-        .form-busqueda {
-            position: relative;
-        }
-        .form-busqueda>input {
-            width: 95%;
-            box-sizing: border-box;
-        }
-        .form-busqueda>button {
-            position: absolute;
-            right: 10px;
-            top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div id="pagina">
@@ -131,12 +20,23 @@
             <img src="images/logo-sems.png" alt="Logo de la SEMS" class="logo-sems" width="100">
             <img src="images/logo-uemstis.png" alt="Logo de la UEMSTIS" class="logo-uemstis" width="100">
             <div class="form-busqueda">
-                <input type="text" placeholder="Escribe algo">
-                <button>B</button>
+                <div class="form-control">
+                    <input type="text" placeholder="Escribe algo">
+                    <button>Buscar</button>
+                </div>
             </div>
         </header>
         <nav id="navbar">
-            NavBar
+            <ul id="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Plantel</a></li>
+                <li><a href="#">Oferta educativa</a></li>
+                <li><a href="#">Alumnos</a></li>
+                <li><a href="#">Docentes</a></li>
+                <li><a href="#">Transparencia</a></li>
+                <li><a href="#">Empleados</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
         </nav>
         <main id="contenido">
             Contenido
